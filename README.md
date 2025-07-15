@@ -6,6 +6,15 @@
 <img src="https://img.shields.io/github/license/fresns/fresns" alt="License">
 </p>
 
+
+SAIL ALIAS
+
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
+
+FOR DEBUG:
+sail build --no-cache
+
+
 ## About Fresns
 
 Fresns is a free and open source social network service software, a general-purpose community product designed for cross-platform, and supports flexible and diverse content forms. It conforms to the trend of the times, satisfies a variety of operating scenarios, is more open and easier to re-development.

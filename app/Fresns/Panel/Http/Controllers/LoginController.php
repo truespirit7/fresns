@@ -63,7 +63,8 @@ class LoginController extends Controller
             $result = false;
         } else {
             $result = $this->guard()->attempt(
-                $this->credentials($request), $request->filled('remember')
+                $this->credentials($request),
+                $request->filled('remember')
             );
         }
 
@@ -129,7 +130,13 @@ class LoginController extends Controller
         if (empty($panelLang)) {
             Cookie::queue(Cookie::forever('fresns_panel_locale', config('app.locale'), '/'));
         }
-
+        // moke create admin account
+        // try {
+        //     \App\Utilities\AppUtility::makeAdminAccount('passenger641@gmail.com', 'password123');
+        //     return 'Admin created successfully';
+        // } catch (\Exception $e) {
+        //     return 'Error: ' . $e->getMessage();
+        // }
         $versionMd5 = md5(AppHelper::VERSION);
 
         return view('FsView::auth.login', compact('versionMd5'));
